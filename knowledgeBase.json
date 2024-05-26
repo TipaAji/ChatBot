@@ -1,0 +1,20 @@
+{
+  "questions": [
+    {
+      "question": "Hey",
+      "answer": "Hello"
+    },
+    {
+      "question": "How are you?",
+      "answer": "I am good. How are you?"
+    },
+    {
+      "question": "I am doing well",
+      "answer": "What are you up to today?"
+    },
+    {
+      "question": "Not much. I am going to the gym.",
+      "answer": "What exercises are you going to be doing?"
+    }
+  ]
+}
