@@ -15,6 +15,10 @@
     {
       "question": "Not much. I am going to the gym.",
       "answer": "What exercises are you going to be doing?"
+    },
+    {
+      "question": "Thank you!",
+      "answer": "You're welcome!"
     }
   ]
 }

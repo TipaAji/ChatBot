@@ -1,5 +1,6 @@
 import json
 from difflib import get_close_matches
+import wikipedia
 
 def loadKnowledgeBase(filePath):
     with open(filePath, 'r') as f:
@@ -18,7 +19,9 @@ def getAnswers(questions, knowledgeBase):
     for q in knowledgeBase['questions']:
         if q['question'] == questions:
             return q['answer']
-
+def search(keyword):
+    searchResult = wikipedia.search(keyword)[0]
+    return wikipedia.page(searchResult).summary
 def chatBot():
     knowledgeBase = loadKnowledgeBase('knowledgeBase.json')
 
@@ -35,10 +38,17 @@ def chatBot():
             print(f'Bot: {answer}')
 
         else:
-            print("Bot: I don't understand that. Can you explain?")
-            newAnswer = input("Type the answer or type 'skip': ")
+            print("Bot: I don't understand that. Do you want me to search Wikipedia, or do you want to teach me? "
+                  "Otherwise type 'skip'")
+            choice = input("Your choice: ").lower()
+            if choice == 'skip':
+                continue
+            elif "wikipedia" in choice:
+                keyword = input("What keyword would you like to search: ")
+                print(search(keyword))
 
-            if newAnswer.lower() != "skip":
+            else:
+                newAnswer = input("Type the answer to your question: ")
                 knowledgeBase['questions'].append({'question': userInput, 'answer': newAnswer})
                 saveKnowledgeBase('knowledgeBase.json', knowledgeBase)
                 print("Bot: Thank you I learned something new.")
