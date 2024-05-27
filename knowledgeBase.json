@@ -19,6 +19,22 @@
     {
       "question": "Thank you!",
       "answer": "You're welcome!"
+    },
+    {
+      "question": "Hi",
+      "answer": "Hello"
+    },
+    {
+      "question": "Good",
+      "answer": "Glad to hear!"
+    },
+    {
+      "question": "No problem",
+      "answer": "Is there anything else I can do for you?"
+    },
+    {
+      "question": "what are you up to today",
+      "answer": "Not much. How about you?"
     }
   ]
 }
